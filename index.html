@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--Merupakan deklarasi tipe dokumen yang memberi tahu browser bahwa dokumen ini ditulis menggunakan HTML, yaitu sintaks standar yang digunakan untuk memulai sebuah dokumen HTML.-->
+<html lang="id">
+<!--Merupakan elemen utama dari seluruh dokumen dan berfungsi untuk menandai awal serta akhir sebuah dokumen HTML.-->
+
+<!--<head></head> digunakan untuk menampung informasi halaman web, termasuk judul yang akan ditampilkan di browser.-->
+
+<head>
+    <!--Tag <meta> dalam HTML digunakan untuk menyimpan metadata, yaitu informasi tentang dokumen web itu sendiri yang tidak langsung ditampilkan di halaman web, tetapi berguna bagi browser, mesin pencari, dan perangkat lain.-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<title> </title> berfungsi sebagai tempat untuk menuliskan judul halaman web.-->
+    <title>Sistem Informasi Kependudukan Kota Kediri</title>
+    <!--Tag <style> dalam HTML digunakan untuk menuliskan CSS (Cascading Style Sheets) secara langsung di dalam dokumen HTML.-->
+    <style>
+        /* kode ini membuat teks halaman menggunakan Times New Roman dan memberi jarak tepi 20px di semua sisi. */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+        }
+
+        /* kotak centang masih ada secara fungsional (bisa dicentang lewat skrip atau label), tetapi tidak terlihat oleh pengguna. */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Kode CSS ini membuat setiap label terlihat seperti tombol: berwarna hijau muda, teks tebal dan di tengah, sudutnya membulat, ada jarak di dalam dan antar label, kursor berubah jadi tangan saat diarahkan, dan warnanya berubah halus saat diklik atau disentuh.*/
+        label {
+            display: block;
+            background-color: #c9ffac;
+            padding: 15px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-bottom: 5px;
+        }
+
+        /* Kode CSS ini membuat label berubah warna menjadi hijau lebih terang (#b0e995) saat kursor diarahkan ke atasnya, sehingga terlihat efek interaktif saat pengguna mengarahkan mouse. */
+        label:hover {
+            background-color: #b0e995;
+        }
+
+        /* Kode CSS ini membuat elemen dengan class atau tag `panel` tersimpan secara tersembunyi pada awalnya (`max-height: 0; overflow: hidden;`) dan memiliki tampilan panel dengan latar kuning pucat, padding horizontal 15px, serta garis tepi hijau di kiri, kanan, dan bawah dengan sudut bawah membulat. Selain itu, properti `transition` membuat perubahan tinggi dan padding terjadi secara halus selama 0,5 detik saat panel dibuka atau ditutup.*/
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            background-color: #fcffef;
+            padding: 0 15px;
+            border-left: 2px solid #c9ffac;
+            border-right: 2px solid #c9ffac;
+            border-bottom: 2px solid #c9ffac;
+            border-radius: 0 0 5px 5px;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+
+        /* Panel akan tampil atau meluncur ke bawah secara halus saat pengguna mengklik checkbox yang terkait. */
+        input[type="checkbox"]:checked+label+.panel {
+            max-height: 500px;
+            /* `padding: 15px;` berarti memberi jarak 15 piksel di dalam elemen pada semua sisi (atas, kanan, bawah, kiri), sehingga konten di dalam elemen tidak menempel langsung ke tepi. */
+            padding: 15px;
+        }
+    </style>
+    <!--Tag `</style>` digunakan untuk **menutup blok CSS** yang sebelumnya dibuka dengan `<style>`. Semua aturan CSS yang ditulis di antara `<style>` dan `</style>` akan diterapkan ke elemen HTML di halaman tersebut.-->
+</head>
+<!--<head></head> digunakan untuk menampung informasi halaman web, termasuk judul yang akan ditampilkan di browser.-->
+
+<body>
+    <!--Tag `<body>` dalam HTML digunakan untuk menandai **bagian utama halaman web** yang berisi semua konten yang **akan ditampilkan kepada pengguna**, seperti teks, gambar, tautan, tombol, dan elemen lainnya.-->
+    <table border="1" width="650" align="center">
+        <!--kode ini membuat tabel dengan lebar 650px, garis tepi tipis, dan berada di tengah halaman.-->
+        <tr>
+            <!-- Membuat baris tabel. -->
+            <td colspan="6" bgcolor="#c9ffac" align="center">
+                <!--Sel ini menggabungkan 6 kolom, memiliki latar hijau muda (#c9ffac), dan teks/isi ditengah.-->
+                <table border="0" width="100%">
+                    <!--Di dalam sel tersebut ada tabel nested (tabel di dalam tabel) dengan lebar 100% untuk menata logo dan judul.-->
+                    <tr>
+                        <td width="120" align="center">
+                            <!--Menyimpan logo Kota Kediri dengan lebar 100px, berada di tengah.-->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Logo_Kota_Kediri_-_Seal_of_Kediri_City.svg/1957px-Logo_Kota_Kediri_-_Seal_of_Kediri_City.svg.png"
+                                width="100">
+                            <!--Menampilkan gambar di halaman web, src="URL" : Menentukan alamat sumber gambar yang akan ditampilkan, width="100" ; Mengatur lebar gambar menjadi 100 piksel, tinggi akan menyesuaikan secara proporsional.-->
+                        </td>
+                        <td align="center">
+                            <!--Menampilkan judul halaman-->
+                            <b>
+                                <font size="5.5">SISTEM INFORMASI KEPENDUDUKAN</font>
+                                <!--Judul utama besar.-->
+                            </b><br>
+                            <b>
+                                <font size="4.5">KOTA KEDIRI</font>
+                                <!--Subjudul sedikit lebih kecil.-->
+                            </b>
+                            <!--Menutup teks yang dicetak tebal (<b>).-->
+                        </td>
+                        <!--Menutup sel tabel yang berisi teks judul.-->
+                    </tr>
+                    <!--Menutup baris dalam tabel nested (tabel di dalam tabel).-->
+                </table>
+                <!--Menutup tabel nested yang menata logo dan judul.-->
+            </td>
+            <!--Menutup sel utama yang menggabungkan 6 kolom.-->
+        </tr>
+        <!--Menutup baris header utama tabel.-->
+
+        <!-- Menu Navigasi -->
+        <tr>
+            <!--Membuat baris baru di tabel.-->
+            <td colspan="4" align="center">
+                <!--Sel ini menggabungkan 4 kolom dan menempatkan isi di tengah.-->
+                <b>
+                    <!--Membuat teks dicetak tebal.-->
+                    |<a href="https://www.kedirikota.go.id/beranda">Home</a>|
+                    |<a href="https://www.kedirikota.go.id/page/kepala-daerah">Kepala Daerah</a>|
+                    |<a href="https://www.kedirikota.go.id/page/perangkat/77">Kec. Mojoroto</a>|
+                    |<a href="https://www.kedirikota.go.id/page/perangkat/76">Kec. Kota</a>|
+                    |<a href="https://www.kedirikota.go.id/page/perangkat/75">Kec. Pesantren</a>|
+                    |<a href="https://www.kedirikota.go.id/page/kelurahan">Kelurahan</a>|
+                    <!--Membuat tautan (link) ke halaman web tertentu-->
+                </b>
+                <!--Menutup teks yang dicetak tebal.-->
+            </td>
+            <!--Menutup sel tabel yang berisi menu.-->
+        </tr>
+        <!--Menutup baris tabel menu navigasi.-->
+
+        <!-- Judul dan Deskripsi -->
+        <tr>
+            <!--Membuat baris baru di tabel.-->
+            <td colspan="4" align="center">
+                <!--Sel ini menggabungkan 4 kolom dan menempatkan konten di tengah.-->
+                <input type="checkbox" id="info">
+                <!--Membuat kotak centang yang akan mengontrol tampilan panel informasi.-->
+                <label for="info">Klik untuk melihat Informasi Umum Kota Kediri</label>
+                <!--Label yang bisa diklik untuk membuka atau menutup panel.-->
+                <div class="panel">
+                    Kota Kediri terletak pada 7°45’–7°55’ Lintang Selatan dan 111°05’–112°03’ Bujur Timur, dikelilingi
+                    oleh wilayah Kabupaten Kediri dengan luas 63,404 km² yang terbagi menjadi tiga kecamatan dan 46
+                    kelurahan. Wilayahnya didominasi dataran rendah dengan ketinggian antara 63–100 meter di atas
+                    permukaan laut dan sebagian kecil perbukitan di barat, seperti Gunung Maskumambang dan Gunung
+                    Klotok. Kota ini berpenduduk sekitar 287.962 jiwa dengan kepadatan 13.879 jiwa/km². Penggunaan
+                    lahannya didominasi kawasan terbangun terutama di Kecamatan Kota, sedangkan Kecamatan Mojoroto dan
+                    Pesantren masih memiliki lahan pertanian dan ruang terbuka yang cukup luas. Secara umum, Kota Kediri
+                    memiliki karakteristik wilayah datar, padat penduduk, dan terus berkembang sebagai pusat kegiatan
+                    ekonomi dan perkotaan di wilayah sekitarnya.
+                </div>
+                <!--<div class="panel">...</div> : Panel yang berisi informasi umum Kota Kediri, seperti lokasi, luas wilayah, jumlah penduduk, kepadatan, kondisi lahan, dan karakteristik kota.-->
+            </td>
+            <!--Menutup sel tabel yang berisi checkbox, label, dan panel informasi.-->
+        </tr>
+        <!--Menutup baris tabel tersebut.-->
+
+        <!-- Tabel Utama -->
+        <tr>
+            <!--Membuat baris baru di tabel utama.-->
+            <td colspan="4" align="center">
+                <!--Sel ini menggabungkan 4 kolom dan menempatkan konten di tengah.-->
+                <b>Data Statistik Kependudukan Kota Kediri</b>
+                <!--Menampilkan judul tebal untuk tabel statistik.-->
+                <table border="1" width="100%">
+                    <!--Membuat tabel baru di dalam sel dengan garis tepi dan lebar 100%.-->
+                    <tr bgcolor="#f9ffb9">
+                        <th rowspan="2">Kecamatan</th>
+                        <th rowspan="2">Luas Wilayah (Km²)</th>
+                        <th colspan="4">2021</th>
+                        <!--Baris pertama (<tr bgcolor="#f9ffb9">) menampilkan kolom: Kecamatan, Luas Wilayah, dan Tahun 2021 (menggabungkan 4 kolom).-->
+                    </tr>
+                    <!--Tag </tr> digunakan untuk menutup sebuah baris tabel yang sebelumnya dibuka dengan <tr>.-->
+                    <tr bgcolor="#f9ffb9">
+                        <th>Laki-laki (jiwa)</th>
+                        <th>Perempuan (jiwa)</th>
+                        <th>Total (jiwa)</th>
+                        <th>Kepadatan Penduduk (jiwa/km²)</th>
+                        <!--Baris kedua menampilkan sub-kolom 2021: Laki-laki, Perempuan, Total, Kepadatan Penduduk.-->
+                    </tr>
+                    <!--bagian ini mengakhiri satu baris data atau header dalam tabel.-->
+                    <tr onmouseover="this.style.background='lightblue'; this.style.transform='translateY(-5px)';"
+                        onmouseout="this.style.background='white'; this.style.transform='translateY(0)';"
+                        style="transition: all 0.3s;">
+                        <!--onmouseover dan onmouseout: Memberikan efek highlight biru dan animasi naik turun saat kursor diarahkan ke baris.-->
+                        <td>Mojoroto</td>
+                        <!--Nama kecamatan.-->
+                        <td>24,601</td>
+                        <!--Luas wilayah dalam km².-->
+                        <td>58.477</td>
+                        <!--Jumlah penduduk laki-laki.-->
+                        <td>56.541</td>
+                        <!--Jumlah penduduk perempuan.-->
+                        <td>115.018</td>
+                        <!--Total penduduk.-->
+                        <td>4.358</td>
+                        <!--Kepadatan penduduk (jiwa/km²).-->
+                    </tr>
+                    <!--Menutup baris ini.-->
+                    <tr onmouseover="this.style.background='lightblue'; this.style.transform='translateY(-5px)';"
+                        onmouseout="this.style.background='white'; this.style.transform='translateY(0)';"
+                        style="transition: all 0.3s;">
+                        <!--onmouseover dan onmouseout: Memberikan efek highlight biru dan animasi naik turun saat kursor diarahkan ke baris.-->
+                        <td>Kota</td>
+                        <!--Nama kecamatan.-->
+                        <td>14,900</td>
+                        <!--Luas wilayah dalam km².-->
+                        <td>41.460</td>
+                        <!--Jumlah penduduk laki-laki.-->
+                        <td>43.174</td>
+                        <!--Jumlah penduduk perempuan.-->
+                        <td>84.634</td>
+                        <!--Total penduduk.-->
+                        <td>5.695</td>
+                        <!--Kepadatan penduduk (jiwa/km²).-->
+                    </tr>
+                    <!--Menutup baris ini.-->
+                    <tr onmouseover="this.style.background='lightblue'; this.style.transform='translateY(-5px)';"
+                        onmouseout="this.style.background='white'; this.style.transform='translateY(0)';"
+                        style="transition: all 0.3s;">
+                        <!--onmouseover dan onmouseout: Memberikan efek highlight biru dan animasi naik turun saat kursor diarahkan ke baris.-->
+                        <td>Pesantren</td>
+                        <!--Nama kecamatan.-->
+                        <td>23,903</td>
+                        <!--Luas wilayah dalam km².-->
+                        <td>44.237</td>
+                        <!--Jumlah penduduk laki-laki.-->
+                        <td>44.073</td>
+                        <!--Jumlah penduduk perempuan.-->
+                        <td>88.310</td>
+                        <!--Total penduduk.-->
+                        <td>3.826</td>
+                        <!--Kepadatan penduduk (jiwa/km²).-->
+                    </tr>
+                    <!--Menutup baris ini.-->
+
+                    <!-- Total Kota Kediri dengan warna sel -->
+                    <tr bgcolor="#f9ffb9"
+                        onmouseover="this.style.background='orange'; this.style.transform='translateY(-5px)';"
+                        onmouseout="this.style.background='lightyellow'; this.style.transform='translateY(0)';"
+                        style="transition: all 0.3s;">
+                        <!--onmouseover dan onmouseout: Memberikan efek highlight biru dan animasi naik turun saat kursor diarahkan ke baris.-->
+                        <td><b>Total</b></td>
+                        <!--Nama kecamatan.-->
+                        <td>63,404</td>
+                        <!--Luas wilayah dalam km².-->
+                        <td>144.174</td>
+                        <!--Jumlah penduduk laki-laki.-->
+                        <td>143.788</td>
+                        <!--Jumlah penduduk perempuan.-->
+                        <td>287.962</td>
+                        <!--Total penduduk.-->
+                        <td>13.879</td>
+                        <!--Kepadatan penduduk (jiwa/km²).-->
+                    </tr>
+                    <!--Menutup baris ini.-->
+                </table>
+                <!--Menutup tabel yang menampilkan data kecamatan dan total.-->
+            </td>
+            <!--Menutup sel tabel yang menampung tabel nested.-->
+        </tr>
+        <!--Menutup baris tabel utama yang berisi tabel statistik.-->
+
+        <!-- Footer -->
+        <tr>
+            <!--Membuat baris baru di tabel.-->
+            <td colspan="4" align="center" bgcolor="#d7ffac">
+                <!--Sel ini menggabungkan 4 kolom, menempatkan konten di tengah, dan memberi latar hijau muda (#d7ffac).-->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Logo_Kota_Kediri_-_Seal_of_Kediri_City.svg/1957px-Logo_Kota_Kediri_-_Seal_of_Kediri_City.svg.png"
+                    width="80"><br>
+                <!--Menampilkan logo Kota Kediri dengan lebar 80px.-->
+                <b>Pemerintah Kota Kediri</b><br>
+                Jl. Brigadir Jenderal Polisi Imam Bahri No.92, Bangsal, Kec.Pesantren, Kediri, Jawa Timur, 64131, Telp
+                (671414)
+                <!--Menampilkan teks tebal sebagai nama instansi, baris berikutnya menampilkan alamat lengkap dan nomor telepon pemerintah kota.-->
+            </td>
+            <!--Menutup sel dan baris tabel footer.-->
+        </tr>
+        <!--digunakan untuk menutup sebuah baris tabel yang sebelumnya dibuka dengan <tr>.-->
+    </table>
+    <!--Menutup tabel utama halaman.-->
+</body>
+<!--Menutup isi utama halaman web.-->
+
+</html>
+<!--Menutup dokumen HTML.-->
